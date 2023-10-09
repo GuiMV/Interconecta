@@ -1,0 +1,38 @@
+<div id="container" class="text-white col-lg-5 col-10 mx-auto">
+    <main class="rounded-3 my-2 py-5 px-3">
+        <form action="/envio" method="POST">           
+            <label for="riscos">Selecione o tipo de risco</label>
+            <div>
+                <select name="risco" required="required">
+                    {{#each riscos}}
+                        <option class="opcao" value="{{Codigo}}">{{Nome}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+            <div class="my-2">
+                <br>
+                <label for="impacto" class="form-label">Nível de impacto do risco (%)</label>
+                <input class="form-control" name="impacto" required="required" id="impacto" type="number" min="0%" max="100%" placeholder="Impacto do risco">
+            </div>
+
+            <div class="my-2">
+                <br>
+                <label for="probabilidade" class="form-label">Probabilidade de impacto do risco (%)</label>
+                <input class="form-control" name="probabilidade" required="required" id="probabilidade" type="number" min="0" max="100" placeholder="Probabilidade do risco">
+            </div>
+            
+            <div id="div_botao">
+                <button id="botao" type="submit">Enviar</button> 
+            </div>
+        </form>
+    </main>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector("form");
+        form.addEventListener("submit", function (event) {
+            alert("Risco cadastrado com sucesso!");
+        });
+    });
+</script>

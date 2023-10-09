@@ -1,0 +1,4 @@
+-- use base_dados;
+-- drop TABLE risco_projetos;
+-- drop TABLE riscos;
+-- INSERT INTO riscos (Codigo, Nome, Descricao, createdAt, updatedAt)
